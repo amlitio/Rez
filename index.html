@@ -19,7 +19,6 @@
     a { color: var(--brand); text-decoration: none; }
     a:hover { text-decoration: underline; }
 
-    /* Layout */
     .container { max-width: 980px; margin: 0 auto; padding: 0 20px; }
     header.hero { padding: 88px 0 48px; text-align: center; }
     header.hero h1 { font-size: clamp(2rem, 5vw, 3rem); margin: 0 0 8px; letter-spacing: -0.02em; }
@@ -52,7 +51,6 @@
     ul.clean { list-style: none; padding: 0; margin: 0; }
     ul.clean li { margin: 8px 0; }
 
-    /* Contact form */
     form { display: grid; gap: 12px; max-width: 640px; }
     label { font-weight: 600; font-size: 0.95rem; }
     input, textarea {
@@ -63,7 +61,6 @@
 
     footer { padding: 36px 0; border-top: 1px solid var(--line); text-align: center; color: var(--muted); }
 
-    /* Print-friendly for “Download Resume” */
     @media print {
       nav.top, .cta-row, #contact { display: none !important; }
       header.hero { padding: 0 0 8px; }
@@ -71,7 +68,6 @@
       .card, .chip { border-color: #ccc; }
     }
 
-    /* Responsive */
     @media (max-width: 840px) {
       .grid { grid-template-columns: 1fr; }
       nav .right { display: none; }
@@ -79,14 +75,15 @@
   </style>
 </head>
 <body>
-  <!-- Sticky Nav -->
+  <!-- Nav -->
   <nav class="top">
     <div class="container nav-wrap">
-      <div class="left" aria-label="Site title"><strong>Geo Nayr</strong></div>
-      <div class="right" role="navigation" aria-label="Primary">
+      <div class="left"><strong>Ryan Nayr</strong></div>
+      <div class="right">
         <a class="nav-link" href="#expertise">Expertise</a>
         <a class="nav-link" href="#achievements">Highlights</a>
         <a class="nav-link" href="#experience">Experience</a>
+        <a class="nav-link" href="#certifications">Certifications</a>
         <a class="nav-link" href="#contact">Contact</a>
       </div>
     </div>
@@ -96,10 +93,10 @@
   <header class="hero">
     <div class="container">
       <h1>Ryan Nayr</h1>
-      <p class="tag">Business Manager / Finance Manager — Construction Finance & Operations</p>
+      <p class="tag">CFO & Business Manager — Construction Finance & Operations</p>
       <p class="sub"><em>Scaling subcontractors into multimillion-dollar enterprises with tight cash control, job costing, and automation (Xero • ADP • Zapier • AI).</em></p>
-      <div class="cta-row" role="group" aria-label="Primary actions">
-        <button class="btn" id="downloadBtn" title="Print as PDF for a polished resume">Download Resume (PDF)</button>
+      <div class="cta-row">
+        <button class="btn" id="downloadBtn">Download Resume (PDF)</button>
         <a class="btn secondary" href="#contact">Contact</a>
       </div>
     </div>
@@ -115,7 +112,6 @@
             <li><strong>Financial Management:</strong> Forecasting, budgeting, lender & SBA packs.</li>
             <li><strong>Job Costing & Profitability:</strong> Labor, fuel, equipment across 15+ daily jobs.</li>
             <li><strong>AR/AP Control:</strong> Factoring, remittances, retainage, collections.</li>
-            <li><strong>Process Development:</strong> Implemented all core systems for business operations and accounting procedures.</li>
             <li><strong>Automation:</strong> Xero, ADP, Zapier, AI reconciliation & reporting.</li>
             <li><strong>Team Leadership:</strong> Built documentation, AR, and AP teams; cut overhead 20%.</li>
           </ul>
@@ -124,18 +120,16 @@
           <span class="chip">Xero</span>
           <span class="chip">ADP</span>
           <span class="chip">Zapier</span>
-          <span class="chip">Procore/Tradify</span>
-          <span class="chip">Financial Modeling</span>
+          <span class="chip">OCR Tools</span>
           <span class="chip">Cash Forecasting</span>
           <span class="chip">Job Costing</span>
           <span class="chip">AI Assistants</span>
-          <p class="small" style="margin-top:10px;">Tooling you use daily to make ops and finance faster and clearer.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Achievements -->
+  <!-- Highlights -->
   <section id="achievements">
     <div class="container">
       <h2>Key Highlights</h2>
@@ -163,30 +157,78 @@
     <div class="container">
       <h2>Experience</h2>
 
+      <!-- Role Highlights -->
+      <div class="card" style="margin-bottom:16px;">
+        <h3 style="margin:0 0 6px;">CFO / Business Manager</h3>
+        <p class="small"><em>South Florida · Feb 2024 – Present</em></p>
+        <ul class="clean">
+          <li>Grew systems and workflows to support multimillion-dollar operations in under a year</li>
+          <li>Architected accounting, billing, and job-costing systems in Xero</li>
+          <li>Implemented daily cash tracking with forward-looking visibility</li>
+          <li>Automated invoice generation, reconciliation, and expense categorization</li>
+          <li>Managed monthly closes and division-level reporting — clean, accurate P&Ls, every time</li>
+          <li>Negotiated and structured financing for equipment and loans while preserving liquidity</li>
+        </ul>
+      </div>
+
+      <!-- Core Strengths -->
+      <div class="card" style="margin-bottom:16px;">
+        <h3 style="margin:0 0 6px;">Core Strengths</h3>
+        <ul class="clean">
+          <li>Construction accounting & job costing (SOVs, change orders, NTO/NOCs)</li>
+          <li>Predictive cash flow modeling and daily financial oversight</li>
+          <li>Loan and equipment financing negotiations</li>
+          <li>Workflow automation (Zapier, OCR tools, AI, Excel)</li>
+          <li>Vendor & subcontractor compliance systems (W-9s, COIs, contracts)</li>
+          <li>Financial team leadership and onboarding</li>
+          <li>Bank transaction management and controls</li>
+        </ul>
+      </div>
+
+      <!-- Adler Hydro Vac -->
       <div class="card" style="margin-bottom:16px;">
         <h3 style="margin:0 0 6px;">Adler Hydro Vac</h3>
         <p class="small"><em>Business Manager & CFO · 2024–Present</em></p>
         <ul class="clean">
-          <li>Directed financial operations (cash flow to strategic growth).</li>
-          <li>Built automation across billing, payroll, compliance, and reporting.</li>
-          <li>Managed lender relationships, fleet financing, and factoring workflows.</li>
+          <li>Directed financial operations (cash flow to strategic growth)</li>
+          <li>Built automation across billing, payroll, compliance, and reporting</li>
+          <li>Managed lender relationships, fleet financing, and factoring workflows</li>
         </ul>
       </div>
 
+      <!-- Margin Utility -->
       <div class="card">
         <h3 style="margin:0 0 6px;">Margin Utility (Consulting)</h3>
         <p class="small"><em>Founder · 2025–Present</em></p>
         <ul class="clean">
-          <li>Delivered tech-enabled back-office with Xero integration for subcontractors.</li>
-          <li>Implemented cash forecasting, job costing, and compliance controls.</li>
-          <li>Advised on scaling playbooks and operational KPIs.</li>
+          <li>Delivered tech-enabled back-office with Xero integration for subcontractors</li>
+          <li>Implemented cash forecasting, job costing, and compliance controls</li>
+          <li>Advised on scaling playbooks and operational KPIs</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Certifications -->
+  <section id="certifications">
+    <div class="container">
+      <h2>Licenses & Certifications</h2>
+      <div class="card">
+        <ul class="clean">
+          <li>
+            <a href="https://www.credential.net/f461fa99-5237-4ebb-afee-1208b9720cb8#acc.2IciqjSl" target="_blank" rel="noopener noreferrer">
+              Certified Construction Financial Management Professional (Sample)
+            </a>
+          </li>
+          <!-- Add more certifications below -->
+          <!-- <li><a href="https://link-to-cert.com" target="_blank" rel="noopener noreferrer">Certification Name</a></li> -->
         </ul>
       </div>
     </div>
   </section>
 
   <!-- Contact -->
-  <section id="contact" aria-label="Contact form">
+  <section id="contact">
     <div class="container">
       <h2>Contact</h2>
       <form id="contactForm" novalidate>
@@ -204,9 +246,9 @@
         </div>
         <div style="display:flex; gap:10px; align-items:center;">
           <button type="submit" class="btn">Send Message</button>
-          <span class="small">This opens your email app with a pre-filled message (no backend needed).</span>
+          <span class="small">This opens your email app with a pre-filled message.</span>
         </div>
-        <p class="small">Prefer email? <a href="mailto:info@adlerhydro.com">info@adlerhydro.com</a> · Phone: 561-566-9364</p>
+        <p class="small">Prefer direct email? <a href="mailto:info@adlerhydro.com">info@adlerhydro.com</a> · Phone: 561-566-9364</p>
       </form>
     </div>
   </section>
@@ -216,7 +258,6 @@
   </footer>
 
   <script>
-    // Smooth scroll for internal links
     document.querySelectorAll('a[href^="#"]').forEach(a=>{
       a.addEventListener('click', e=>{
         const id = a.getAttribute('href');
@@ -228,28 +269,17 @@
       });
     });
 
-    // Download as PDF: use print stylesheet for clean output
-    document.getElementById('downloadBtn')?.addEventListener('click', ()=>{
-      window.print();
-    });
+    document.getElementById('downloadBtn')?.addEventListener('click', ()=>{ window.print(); });
 
-    // Contact form -> mailto with validation
     const form = document.getElementById('contactForm');
     form?.addEventListener('submit', (e)=>{
       e.preventDefault();
-      const name = (document.getElementById('name')||{}).value?.trim();
-      const email = (document.getElementById('email')||{}).value?.trim();
-      const message = (document.getElementById('message')||{}).value?.trim();
-
-      // basic validation
-      if (!name || !email || !message) {
-        alert('Please complete all fields.');
-        return;
-      }
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const message = document.getElementById('message').value.trim();
+      if (!name || !email || !message) { alert('Please complete all fields.'); return; }
       const subject = encodeURIComponent('Website Inquiry');
-      const body = encodeURIComponent(
-        `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}\n`
-      );
+      const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}\n`);
       window.location.href = `mailto:info@adlerhydro.com?subject=${subject}&body=${body}`;
     });
   </script>
