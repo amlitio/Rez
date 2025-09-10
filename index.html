@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ryan Nayr — Resume</title>
+  <meta name="description" content="CFO & Business Manager specializing in construction finance, automation, and operational scaling." />
+  <style>
+    :root {
+      --bg: #ffffff;
+      --fg: #1f2328;
+      --muted: #667085;
+      --line: #ececec;
+      --brand: #0f62fe;
+      --chip: #f5f7fb;
+    }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; color: var(--fg); background: var(--bg); }
+    a { color: var(--brand); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    /* Layout */
+    .container { max-width: 980px; margin: 0 auto; padding: 0 20px; }
+    header.hero { padding: 88px 0 48px; text-align: center; }
+    header.hero h1 { font-size: clamp(2rem, 5vw, 3rem); margin: 0 0 8px; letter-spacing: -0.02em; }
+    header.hero p.tag { margin: 0; color: var(--muted); font-size: 1.05rem; }
+    header.hero p.sub { margin: 10px 0 0; color: #3d3d3d; max-width: 780px; margin-left: auto; margin-right: auto; }
+
+    .cta-row { margin-top: 22px; display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+    .btn {
+      appearance: none; border: 1px solid var(--line); background: #101828; color: #fff;
+      padding: 11px 16px; border-radius: 10px; font-weight: 600; cursor: pointer;
+    }
+    .btn.secondary { background: #fff; color: #101828; border-color: #dcdcdc; }
+    .btn:focus-visible { outline: 3px solid #b3d0ff; outline-offset: 2px; }
+
+    nav.top {
+      position: sticky; top: 0; z-index: 10; background: rgba(255,255,255,0.85); backdrop-filter: saturate(180%) blur(12px);
+      border-bottom: 1px solid var(--line);
+    }
+    nav .nav-wrap { display: flex; align-items: center; justify-content: space-between; height: 56px; }
+    nav a.nav-link { color: #333; font-weight: 600; margin-left: 18px; }
+    nav a.nav-link:hover { color: var(--brand); }
+
+    section { padding: 42px 0; border-top: 1px solid var(--line); }
+    section h2 { margin: 0 0 14px; font-size: 1.35rem; }
+    .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+    .card {
+      border: 1px solid var(--line); border-radius: 12px; padding: 16px; background: #fff;
+    }
+    .chip { display: inline-block; background: var(--chip); border: 1px solid var(--line); border-radius: 999px; padding: 6px 10px; font-size: 0.9rem; margin: 6px 6px 0 0; }
+    ul.clean { list-style: none; padding: 0; margin: 0; }
+    ul.clean li { margin: 8px 0; }
+
+    /* Contact form */
+    form { display: grid; gap: 12px; max-width: 640px; }
+    label { font-weight: 600; font-size: 0.95rem; }
+    input, textarea {
+      width: 100%; padding: 10px 12px; border: 1px solid #d9d9d9; border-radius: 10px; font-size: 1rem;
+    }
+    textarea { min-height: 120px; resize: vertical; }
+    .small { color: var(--muted); font-size: 0.9rem; }
+
+    footer { padding: 36px 0; border-top: 1px solid var(--line); text-align: center; color: var(--muted); }
+
+    /* Print-friendly for “Download Resume” */
+    @media print {
+      nav.top, .cta-row, #contact { display: none !important; }
+      header.hero { padding: 0 0 8px; }
+      section { padding: 16px 0; border: 0; }
+      .card, .chip { border-color: #ccc; }
+    }
+
+    /* Responsive */
+    @media (max-width: 840px) {
+      .grid { grid-template-columns: 1fr; }
+      nav .right { display: none; }
+    }
+  </style>
+</head>
+<body>
+  <!-- Sticky Nav -->
+  <nav class="top">
+    <div class="container nav-wrap">
+      <div class="left" aria-label="Site title"><strong>Ryan Nayr</strong></div>
+      <div class="right" role="navigation" aria-label="Primary">
+        <a class="nav-link" href="#expertise">Expertise</a>
+        <a class="nav-link" href="#achievements">Highlights</a>
+        <a class="nav-link" href="#experience">Experience</a>
+        <a class="nav-link" href="#contact">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <header class="hero">
+    <div class="container">
+      <h1>Ryan Nayr</h1>
+      <p class="tag">CFO & Business Manager — Construction Finance & Operations</p>
+      <p class="sub"><em>Scaling subcontractors into multimillion-dollar enterprises with tight cash control, job costing, and automation (Xero • ADP • Zapier • AI).</em></p>
+      <div class="cta-row" role="group" aria-label="Primary actions">
+        <button class="btn" id="downloadBtn" title="Print as PDF for a polished resume">Download Resume (PDF)</button>
+        <a class="btn secondary" href="#contact">Contact</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Expertise -->
+  <section id="expertise">
+    <div class="container">
+      <h2>Core Expertise</h2>
+      <div class="grid">
+        <div class="card">
+          <ul class="clean">
+            <li><strong>Financial Management:</strong> Forecasting, budgeting, lender & SBA packs.</li>
+            <li><strong>Job Costing & Profitability:</strong> Labor, fuel, equipment across 15+ daily jobs.</li>
+            <li><strong>AR/AP Control:</strong> Factoring, remittances, retainage, collections.</li>
+            <li><strong>Automation:</strong> Xero, ADP, Zapier, AI reconciliation & reporting.</li>
+            <li><strong>Team Leadership:</strong> Built documentation, AR, and AP teams; cut overhead 20%.</li>
+          </ul>
+        </div>
+        <div class="card">
+          <span class="chip">Xero</span>
+          <span class="chip">ADP</span>
+          <span class="chip">Zapier</span>
+          <span class="chip">Procore/Tradify</span>
+          <span class="chip">Financial Modeling</span>
+          <span class="chip">Cash Forecasting</span>
+          <span class="chip">Job Costing</span>
+          <span class="chip">AI Assistants</span>
+          <p class="small" style="margin-top:10px;">Tooling you use daily to make ops and finance faster and clearer.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Achievements -->
+  <section id="achievements">
+    <div class="container">
+      <h2>Key Highlights</h2>
+      <div class="grid">
+        <div class="card">
+          <ul class="clean">
+            <li>Saved <strong>20% overhead</strong> by building job costing & billing systems.</li>
+            <li>Cut <strong>AR collection time 30%</strong> via controls and automation.</li>
+            <li>Negotiated multi-million fleet financing & lender packages.</li>
+          </ul>
+        </div>
+        <div class="card">
+          <ul class="clean">
+            <li>Deployed <strong>AI reconciliation & margin dashboards</strong> for live visibility.</li>
+            <li>Scaled operations with utilities & primes into multimillion-dollar revenue.</li>
+            <li>Trained a self-sufficient accounting team to manage day-to-day.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Experience -->
+  <section id="experience">
+    <div class="container">
+      <h2>Experience</h2>
+
+      <div class="card" style="margin-bottom:16px;">
+        <h3 style="margin:0 0 6px;">Adler Hydro Vac</h3>
+        <p class="small"><em>Business Manager & CFO · 2024–Present</em></p>
+        <ul class="clean">
+          <li>Directed financial operations (cash flow to strategic growth).</li>
+          <li>Built automation across billing, payroll, compliance, and reporting.</li>
+          <li>Managed lender relationships, fleet financing, and factoring workflows.</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3 style="margin:0 0 6px;">Margin Utility (Consulting)</h3>
+        <p class="small"><em>Founder · 2025–Present</em></p>
+        <ul class="clean">
+          <li>Delivered tech-enabled back-office with Xero integration for subcontractors.</li>
+          <li>Implemented cash forecasting, job costing, and compliance controls.</li>
+          <li>Advised on scaling playbooks and operational KPIs.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" aria-label="Contact form">
+    <div class="container">
+      <h2>Contact</h2>
+      <form id="contactForm" novalidate>
+        <div>
+          <label for="name">Name</label>
+          <input id="name" name="name" placeholder="Your name" autocomplete="name" required />
+        </div>
+        <div>
+          <label for="email">Email</label>
+          <input id="email" name="email" placeholder="you@example.com" type="email" autocomplete="email" required />
+        </div>
+        <div>
+          <label for="message">Message</label>
+          <textarea id="message" name="message" placeholder="How can I help?" required></textarea>
+        </div>
+        <div style="display:flex; gap:10px; align-items:center;">
+          <button type="submit" class="btn">Send Message</button>
+          <span class="small">This opens your email app with a pre-filled message (no backend needed).</span>
+        </div>
+        <p class="small">Prefer email? <a href="mailto:info@adlerhydro.com">info@adlerhydro.com</a> · Phone: 561-566-9364</p>
+      </form>
+    </div>
+  </section>
+
+  <footer>
+    © 2025 Ryan Nayr — Clean, straightforward, and fast.
+  </footer>
+
+  <script>
+    // Smooth scroll for internal links
+    document.querySelectorAll('a[href^="#"]').forEach(a=>{
+      a.addEventListener('click', e=>{
+        const id = a.getAttribute('href');
+        if (!id || id === '#') return;
+        const el = document.querySelector(id);
+        if (!el) return;
+        e.preventDefault();
+        el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      });
+    });
+
+    // Download as PDF: use print stylesheet for clean output
+    document.getElementById('downloadBtn')?.addEventListener('click', ()=>{
+      window.print();
+    });
+
+    // Contact form -> mailto with validation
+    const form = document.getElementById('contactForm');
+    form?.addEventListener('submit', (e)=>{
+      e.preventDefault();
+      const name = (document.getElementById('name')||{}).value?.trim();
+      const email = (document.getElementById('email')||{}).value?.trim();
+      const message = (document.getElementById('message')||{}).value?.trim();
+
+      // basic validation
+      if (!name || !email || !message) {
+        alert('Please complete all fields.');
+        return;
+      }
+      const subject = encodeURIComponent('Website Inquiry');
+      const body = encodeURIComponent(
+        `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}\n`
+      );
+      window.location.href = `mailto:info@adlerhydro.com?subject=${subject}&body=${body}`;
+    });
+  </script>
+</body>
+</html>
