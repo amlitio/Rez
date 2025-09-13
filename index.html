@@ -18,56 +18,42 @@
     html, body { margin: 0; padding: 0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; color: var(--fg); background: var(--bg); }
     a { color: var(--brand); text-decoration: none; }
     a:hover { text-decoration: underline; }
-
     .container { max-width: 980px; margin: 0 auto; padding: 0 20px; }
     header.hero { padding: 88px 0 48px; text-align: center; }
     header.hero h1 { font-size: clamp(2rem, 5vw, 3rem); margin: 0 0 8px; letter-spacing: -0.02em; }
     header.hero p.tag { margin: 0; color: var(--muted); font-size: 1.05rem; }
-    header.hero p.sub { margin: 10px 0 0; color: #3d3d3d; max-width: 780px; margin-left: auto; margin-right: auto; }
-
+    header.hero p.sub { margin: 10px auto 0; color: #3d3d3d; max-width: 780px; }
     .cta-row { margin-top: 22px; display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
-    .btn {
-      appearance: none; border: 1px solid var(--line); background: #101828; color: #fff;
-      padding: 11px 16px; border-radius: 10px; font-weight: 600; cursor: pointer;
-    }
+    .btn { appearance: none; border: 1px solid var(--line); background: #101828; color: #fff; padding: 11px 16px; border-radius: 10px; font-weight: 600; cursor: pointer; }
     .btn.secondary { background: #fff; color: #101828; border-color: #dcdcdc; }
     .btn:focus-visible { outline: 3px solid #b3d0ff; outline-offset: 2px; }
-
-    nav.top {
-      position: sticky; top: 0; z-index: 10; background: rgba(255,255,255,0.85); backdrop-filter: saturate(180%) blur(12px);
-      border-bottom: 1px solid var(--line);
-    }
+    nav.top { position: sticky; top: 0; z-index: 10; background: rgba(255,255,255,0.85); backdrop-filter: saturate(180%) blur(12px); border-bottom: 1px solid var(--line); }
     nav .nav-wrap { display: flex; align-items: center; justify-content: space-between; height: 56px; }
     nav a.nav-link { color: #333; font-weight: 600; margin-left: 18px; }
     nav a.nav-link:hover { color: var(--brand); }
-
     section { padding: 42px 0; border-top: 1px solid var(--line); }
     section h2 { margin: 0 0 14px; font-size: 1.35rem; }
     .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
-    .card {
-      border: 1px solid var(--line); border-radius: 12px; padding: 16px; background: #fff;
-    }
+    .card { border: 1px solid var(--line); border-radius: 12px; padding: 16px; background: #fff; }
     .chip { display: inline-block; background: var(--chip); border: 1px solid var(--line); border-radius: 999px; padding: 6px 10px; font-size: 0.9rem; margin: 6px 6px 0 0; }
     ul.clean { list-style: none; padding: 0; margin: 0; }
     ul.clean li { margin: 8px 0; }
-
+    .role h3 { margin: 0 0 6px; }
+    .role .small { color: var(--muted); }
     form { display: grid; gap: 12px; max-width: 640px; }
     label { font-weight: 600; font-size: 0.95rem; }
-    input, textarea {
-      width: 100%; padding: 10px 12px; border: 1px solid #d9d9d9; border-radius: 10px; font-size: 1rem;
-    }
+    input, textarea { width: 100%; padding: 10px 12px; border: 1px solid #d9d9d9; border-radius: 10px; font-size: 1rem; }
     textarea { min-height: 120px; resize: vertical; }
     .small { color: var(--muted); font-size: 0.9rem; }
-
     footer { padding: 36px 0; border-top: 1px solid var(--line); text-align: center; color: var(--muted); }
-
     @media print {
       nav.top, .cta-row, #contact { display: none !important; }
       header.hero { padding: 0 0 8px; }
       section { padding: 16px 0; border: 0; }
       .card, .chip { border-color: #ccc; }
+      a { color: inherit; text-decoration: none; }
+      .container { max-width: 100%; padding: 0 8mm; }
     }
-
     @media (max-width: 840px) {
       .grid { grid-template-columns: 1fr; }
       nav .right { display: none; }
@@ -76,7 +62,7 @@
 </head>
 <body>
   <!-- Nav -->
-  <nav class="top">
+  <nav class="top" aria-label="Primary">
     <div class="container nav-wrap">
       <div class="left"><strong>Ryan Nayr</strong></div>
       <div class="right">
@@ -96,56 +82,59 @@
       <p class="tag">CFO & Business Manager — Construction Finance & Operations</p>
       <p class="sub"><em>Scaling subcontractors into multimillion-dollar enterprises with tight cash control, job costing, and automation (Xero • ADP • Zapier • AI).</em></p>
       <div class="cta-row">
-        <button class="btn" id="downloadBtn">Download Resume (PDF)</button>
+        <button class="btn" id="downloadBtn" type="button" aria-label="Download resume as PDF">Download Resume (PDF)</button>
         <a class="btn secondary" href="#contact">Contact</a>
       </div>
     </div>
   </header>
 
   <!-- Expertise -->
-  <section id="expertise">
+  <section id="expertise" aria-labelledby="expertise-title">
     <div class="container">
-      <h2>Core Expertise</h2>
+      <h2 id="expertise-title">Core Expertise</h2>
       <div class="grid">
         <div class="card">
           <ul class="clean">
-            <li><strong>Financial Management:</strong> Forecasting, budgeting, lender & SBA packs.</li>
-            <li><strong>Job Costing & Profitability:</strong> Labor, fuel, equipment across 15+ daily jobs.</li>
-            <li><strong>AR/AP Control:</strong> Factoring, remittances, retainage, collections.</li>
-            <li><strong>Automation:</strong> Xero, ADP, Zapier, AI reconciliation & reporting.</li>
-            <li><strong>Team Leadership:</strong> Built documentation, AR, and AP teams; cut overhead 20%.</li>
+            <li><strong>Financial Management:</strong> Forecasting, budgeting, lender/SBA packages, month-end close.</li>
+            <li><strong>Job Costing & Profitability:</strong> Labor, fuel, equipment, materials across 15+ daily jobs.</li>
+            <li><strong>AR/AP Control:</strong> Factoring, remittances, retainage, collections, vendor compliance.</li>
+            <li><strong>Automation:</strong> Xero, ADP, Zapier, OCR, AI reconciliation & reporting dashboards.</li>
+            <li><strong>Team Leadership:</strong> Built documentation, AR, and AP teams; cut overhead ~20%.</li>
           </ul>
         </div>
-        <div class="card">
+        <div class="card" aria-label="Tools and skills">
           <span class="chip">Xero</span>
+          <span class="chip">QuickBooks</span>
           <span class="chip">ADP</span>
           <span class="chip">Zapier</span>
-          <span class="chip">OCR Tools</span>
+          <span class="chip">Tradify</span>
+          <span class="chip">OCR</span>
           <span class="chip">Cash Forecasting</span>
           <span class="chip">Job Costing</span>
           <span class="chip">AI Assistants</span>
+          <span class="chip">Excel</span>
         </div>
       </div>
     </div>
   </section>
 
   <!-- Highlights -->
-  <section id="achievements">
+  <section id="achievements" aria-labelledby="highlights-title">
     <div class="container">
-      <h2>Key Highlights</h2>
+      <h2 id="highlights-title">Key Highlights</h2>
       <div class="grid">
         <div class="card">
           <ul class="clean">
-            <li>Saved <strong>20% overhead</strong> by building job costing & billing systems.</li>
-            <li>Cut <strong>AR collection time 30%</strong> via controls and automation.</li>
-            <li>Negotiated multi-million fleet financing & lender packages.</li>
+            <li>Saved <strong>~20% overhead</strong> by implementing job costing, controls, and automation.</li>
+            <li>Cut <strong>AR collection time ~30%</strong> through improved invoicing and follow-up workflows.</li>
+            <li>Negotiated multi-million fleet financing and optimized debt structure for growth.</li>
           </ul>
         </div>
         <div class="card">
           <ul class="clean">
-            <li>Deployed <strong>AI reconciliation & margin dashboards</strong> for live visibility.</li>
-            <li>Scaled operations with utilities & primes into multimillion-dollar revenue.</li>
-            <li>Trained a self-sufficient accounting team to manage day-to-day.</li>
+            <li>Deployed <strong>AI reconciliation & live margin dashboards</strong> for project profitability.</li>
+            <li>Scaled operations with utilities & primes (incl. FPL & Pike) to multi-million revenue.</li>
+            <li>Recruited and trained AP/AR/Docs team; established clear SOPs and KPIs.</li>
           </ul>
         </div>
       </div>
@@ -153,98 +142,94 @@
   </section>
 
   <!-- Experience -->
-  <section id="experience">
+  <section id="experience" aria-labelledby="experience-title">
     <div class="container">
-      <h2>Experience</h2>
+      <h2 id="experience-title">Experience</h2>
 
-      <!-- Role Highlights -->
-      <div class="card" style="margin-bottom:16px;">
-        <h3 style="margin:0 0 6px;">CFO / Business Manager</h3>
+      <!-- CFO / Business Manager -->
+      <div class="card role" style="margin-bottom:16px;">
+        <h3>CFO / Business Manager — Adler Hydro Vac</h3>
         <p class="small"><em>South Florida · Feb 2024 – Present</em></p>
         <ul class="clean">
-          <li>Grew systems and workflows to support multimillion-dollar operations in under a year</li>
-          <li>Architected accounting, billing, and job-costing systems in Xero</li>
-          <li>Implemented daily cash tracking with forward-looking visibility</li>
-          <li>Automated invoice generation, reconciliation, and expense categorization</li>
-          <li>Managed monthly closes and division-level reporting — clean, accurate P&Ls, every time</li>
-          <li>Negotiated and structured financing for equipment and loans while preserving liquidity</li>
-        </ul>
-      </div>
-
-      <!-- Core Strengths -->
-      <div class="card" style="margin-bottom:16px;">
-        <h3 style="margin:0 0 6px;">Core Strengths</h3>
-        <ul class="clean">
-          <li>Construction accounting & job costing (SOVs, change orders, NTO/NOCs)</li>
-          <li>Predictive cash flow modeling and daily financial oversight</li>
-          <li>Loan and equipment financing negotiations</li>
-          <li>Workflow automation (Zapier, OCR tools, AI, Excel)</li>
-          <li>Vendor & subcontractor compliance systems (W-9s, COIs, contracts)</li>
-          <li>Financial team leadership and onboarding</li>
-          <li>Bank transaction management and controls</li>
-        </ul>
-      </div>
-
-      <!-- Adler Hydro Vac -->
-      <div class="card" style="margin-bottom:16px;">
-        <h3 style="margin:0 0 6px;">Adler Hydro Vac</h3>
-        <p class="small"><em>Business Manager · 2024–Present</em></p>
-        <ul class="clean">
-          <li>Directed financial operations (cash flow to strategic growth)</li>
-          <li>Built automation across billing, payroll, compliance, and reporting</li>
-          <li>Managed lender relationships, fleet financing, and factoring workflows</li>
+          <li>Directed <strong>full-cycle accounting</strong> (GL, AP/AR, payroll, reconciliations, financial reporting) with Xero + integrated stack (ADP, Zapier, OCR, Sheets/BI).</li>
+          <li>Built <strong>job-costing & billing systems</strong> (SOVs, COs, NTO/NOC tracking), enabling accurate project margins across 15+ daily jobs.</li>
+          <li>Implemented <strong>daily cash tracking & forecast</strong> with lender-ready reporting and variance analysis.</li>
+          <li>Automated <strong>invoice generation, remittance matching, and expense coding</strong>, reducing manual work and error rates.</li>
+          <li>Managed <strong>month-end close</strong> and division-level P&Ls; established controls for audit-ready books.</li>
+          <li>Negotiated <strong>equipment & working-capital financing</strong>; maintained banking/investor relations.</li>
         </ul>
       </div>
 
       <!-- KD Construction -->
-      <div class="card">
-        <h3 style="margin:0 0 6px;">KD Consulting</h3>
-        <p class="small"><em>Accountant · 2023–2024</em></p>
+      <div class="card role" style="margin-bottom:16px;">
+        <h3>Accountant — KD Construction</h3>
+        <p class="small"><em>South Florida · Jan 2023 – Feb 2024</em></p>
         <ul class="clean">
-          <li>Delivered tech-enabled back-office with Xero integration for subcontractors</li>
-          <li>Implemented cash forecasting, job costing, and compliance controls</li>
-          <li>Advised on scaling playbooks and operational KPIs</li>
+          <li>Owned <strong>AIA progress billing</strong> and compliance; prepared draws aligned to contract terms and verified releases.</li>
+          <li>Reconciled <strong>job-cost reports</strong> (labor, materials, subs, OH) ensuring client draw matched detailed cost.</li>
+          <li>Processed <strong>subcontractor payments</strong>, tracked <strong>NTOs/NOCs</strong>, and maintained documentation per Florida statute.</li>
+          <li>Maintained <strong>contracts, COs, budgets</strong> in accounting systems; posted GL and job-cost journals.</li>
+          <li>Partnered with PMs on <strong>variance analysis</strong>, risk items, and KPI reporting; supported AR collections.</li>
+        </ul>
+      </div>
+
+      <!-- Ric-Man (Consolidated) -->
+      <div class="card role" style="margin-bottom:16px;">
+        <h3>Construction Accountant / Project Manager — Ric-Man International</h3>
+        <p class="small"><em>Pompano Beach, FL · Sep 2017 – Jun 2020</em></p>
+        <ul class="clean">
+          <li>Led <strong>construction accounting</strong> across utility projects: AP, payroll recon, job costing, and billing oversight.</li>
+          <li>Reconciled <strong>subcontractor AIA pay applications</strong>, change orders, and budgets vs. commitments; verified lien releases.</li>
+          <li>Managed vendor/sub setup and compliance; coordinated with PMs & field to align costs to budgets and improve margins.</li>
+          <li>Streamlined office/accounting procedures and supported the controller with reporting and audits.</li>
+          <li><em>Built on prior roles:</em> Project Accountant (Moran Environmental Recovery) & Billing Specialist (Gold Coast Lake) consolidated for continuity.</li>
+        </ul>
+      </div>
+
+      <!-- Optional: Consulting -->
+      <div class="card role" style="margin-bottom:16px;">
+        <h3>Founder — Margin Utility (Consulting)</h3>
+        <p class="small"><em>2025 – Present</em></p>
+        <ul class="clean">
+          <li>Delivered tech-enabled back offices for subcontractors with Xero + automation.</li>
+          <li>Implemented cash forecasting, job costing, and compliance controls; advised on KPIs and scale-up playbooks.</li>
+        </ul>
+      </div>
+
+      <!-- Optional: Web -->
+      <div class="card role">
+        <h3>Web Developer (Freelance)</h3>
+        <p class="small"><em>Jul 2020 – Dec 2023</em></p>
+        <ul class="clean">
+          <li>Built Shopify/WordPress sites; integrated payments, improved UX/SEO, and used analytics to lift conversions.</li>
         </ul>
       </div>
     </div>
   </section>
-
-      <!-- Margin Utility -->
-      <div class="card">
-        <h3 style="margin:0 0 6px;">Margin Utility (Consulting)</h3>
-        <p class="small"><em>Founder · 2025–Present</em></p>
-        <ul class="clean">
-          <li>Delivered tech-enabled back-office with Xero integration for subcontractors</li>
-          <li>Implemented cash forecasting, job costing, and compliance controls</li>
-          <li>Advised on scaling playbooks and operational KPIs</li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
 
   <!-- Certifications -->
-  <section id="certifications">
+  <section id="certifications" aria-labelledby="certs-title">
     <div class="container">
-      <h2>Licenses & Certifications</h2>
+      <h2 id="certs-title">Licenses & Certifications</h2>
       <div class="card">
         <ul class="clean">
+          <li>FMVA — Corporate Finance Institute</li>
+          <li>Blockchain Essentials — IBM</li>
+          <!-- Example: link to credential
           <li>
-            <a href="https://www.credential.net/f461fa99-5237-4ebb-afee-1208b9720cb8#acc.2IciqjSl" target="_blank" rel="noopener noreferrer">
+            <a href="https://www.credential.net/..." target="_blank" rel="noopener noreferrer">
               Certified Construction Financial Management Professional (Sample)
             </a>
-          </li>
-          <!-- Add more certifications below -->
-          <!-- <li><a href="https://link-to-cert.com" target="_blank" rel="noopener noreferrer">Certification Name</a></li> -->
+          </li> -->
         </ul>
       </div>
     </div>
   </section>
 
   <!-- Contact -->
-  <section id="contact">
+  <section id="contact" aria-labelledby="contact-title">
     <div class="container">
-      <h2>Contact</h2>
+      <h2 id="contact-title">Contact</h2>
       <form id="contactForm" novalidate>
         <div>
           <label for="name">Name</label>
@@ -262,16 +247,17 @@
           <button type="submit" class="btn">Send Message</button>
           <span class="small">This opens your email app with a pre-filled message.</span>
         </div>
-        <p class="small">Prefer direct email? <a href="mailto:info@adlerhydro.com">ubuenv@gmail.com</a> · Phone: 954-xxx-xxxx</p>
+        <p class="small">Prefer email? <a id="directEmail" href="mailto:gsiciaridis@gmail.com">gsiciaridis@gmail.com</a> · Phone: 954-770-7438</p>
       </form>
     </div>
   </section>
 
   <footer>
-    © 2025 GS — Clean, straightforward, and fast.
+    © 2025 RN — Clean, straightforward, and fast.
   </footer>
 
   <script>
+    // Smooth anchor scroll
     document.querySelectorAll('a[href^="#"]').forEach(a=>{
       a.addEventListener('click', e=>{
         const id = a.getAttribute('href');
@@ -283,8 +269,10 @@
       });
     });
 
+    // Print to PDF
     document.getElementById('downloadBtn')?.addEventListener('click', ()=>{ window.print(); });
 
+    // Contact form -> mailto
     const form = document.getElementById('contactForm');
     form?.addEventListener('submit', (e)=>{
       e.preventDefault();
@@ -294,7 +282,7 @@
       if (!name || !email || !message) { alert('Please complete all fields.'); return; }
       const subject = encodeURIComponent('Website Inquiry');
       const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}\n`);
-      window.location.href = `mailto:ubuenv@gmail.com?subject=${subject}&body=${body}`;
+      window.location.href = `mailto:gsiciaridis@gmail.com?subject=${subject}&body=${body}`;
     });
   </script>
 </body>
